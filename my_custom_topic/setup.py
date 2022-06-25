@@ -1,8 +1,6 @@
 from setuptools import setup
-import os
-from glob import glob
 
-package_name = 'my_topic'
+package_name = 'my_custom_topic'
 
 setup(
     name=package_name,
@@ -12,7 +10,6 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share', package_name), glob('launch/*_launch.py')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -23,8 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'my_publisher_node = my_topic.my_publisher_node:main',
-            'my_subscriber_node = my_topic.my_subscriber_node:main',
+            'my_publisher_node = my_custom_topic.my_publisher_node:main',
+            'my_subscriber_node = my_custom_topic.my_subscriber_node:main',
         ],
     },
 )

@@ -2,7 +2,7 @@ from setuptools import setup
 import os
 from glob import glob
 
-package_name = 'my_topic'
+package_name = 'my_parameter'
 
 setup(
     name=package_name,
@@ -23,8 +23,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'my_publisher_node = my_topic.my_publisher_node:main',
-            'my_subscriber_node = my_topic.my_subscriber_node:main',
+            'my_parameter_node = my_parameter.my_parameter_node:main',
         ],
     },
 )
